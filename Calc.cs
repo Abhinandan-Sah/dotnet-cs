@@ -94,7 +94,7 @@ class Calc{
         }
         else
         {
-            Console.WriteLine("Error")
+            Console.WriteLine("Error");
         }
     }
 
@@ -104,6 +104,35 @@ class Calc{
     public void CheckQuadraticEquation()
     {
         
+       int a; 
+
+        Console.WriteLine("Enter a: ");
+
+        while (!int.TryParse(Console.ReadLine(), out a)) {
+            Console.WriteLine("Invalid input. Please enter a number:");
+        }
+        
+       int b; 
+
+        Console.WriteLine("Enter b: ");
+
+        while (!int.TryParse(Console.ReadLine(), out b)) {
+            Console.WriteLine("Invalid input. Please enter a number:");
+        }
+
+        int c; 
+
+        Console.WriteLine("Enter c: ");
+
+        while (!int.TryParse(Console.ReadLine(), out c)) {
+            Console.WriteLine("Invalid input. Please enter a number:");
+        }
+
+        double d = b*b -4*a*c;
+        double e = Math.Sqrt(d);
+        double root1 = (-b+e) / 2*a;
+        double root2 = (-b-e) / 2*a;
+        Console.WriteLine("Roots are "+ root1 + " and " + root2);
     }
     
     #endregion
@@ -111,7 +140,36 @@ class Calc{
     #region Admission Eligibility
     public void CheckAdmissionEligibility()
     {
-        
+        int phy;
+        Console.Write("Enter physics mark: ");
+        while(!int.TryParse(Console.ReadLine(), out phy))
+        {
+            Console.Write("Invalid input. Enter physics mark");
+        }
+
+        int math;
+        Console.Write("Enter math mark: ");
+        while(!int.TryParse(Console.ReadLine(), out math))
+        {
+            Console.Write("Invalid input. Enter math mark");
+        }
+
+        int chem;
+        Console.Write("Enter chem mark: ");
+        while(!int.TryParse(Console.ReadLine(), out chem))
+        {
+            Console.Write("Invalid input. Enter chem mark");
+        }
+
+        if(phy+math+chem>=180 || math + phy >= 140)
+        {
+            Console.WriteLine("Admission is Approved.");
+        }
+        else
+        {
+            Console.WriteLine("Admission is Rejected.");
+        }
+
     }
     
     #endregion
