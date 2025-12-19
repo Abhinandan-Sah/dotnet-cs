@@ -1,5 +1,11 @@
-﻿class Program
+﻿using System;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace dotnet;
+class Program
 {
+
     static void Main(string[] args)
     {
         // int a = 20;
@@ -33,7 +39,7 @@
         //         Console.WriteLine(n+" isn't prime number");
         //         break;
         //     }
-            
+
         // }
 
         // Console.WriteLine(n+" is prime number");
@@ -51,9 +57,49 @@
         //     Console.WriteLine("Invalid age. Please enter a whole number");
         // }
 
-        Console.WriteLine("Enter feet to Covert: ");
-        double? feet = double.Parse(Console.ReadLine());
-        Console.WriteLine(feet*30.48); 
-    
+        // Console.WriteLine("Enter feet to Covert: ");
+        // double? feet = double.Parse(Console.ReadLine());
+        // Console.WriteLine(feet*30.48); 
+
+        // importing Calc class from Calc.cs
+        //     Calc myCalc = new Calc();
+
+        // Console.WriteLine("Enter a number to check:");
+        // Using int.TryParse is safer than Convert.ToInt32 to avoid crashes if user enters text
+        // if (int.TryParse(Console.ReadLine(), out int input))
+        // {
+        //     bool result = myCalc.IsEven(input);
+        //     Console.WriteLine($"Is {input} even? {result}");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Invalid input. Please enter a number.");
+        // }
+        // Console.ReadKey();
+
+
+        #region EvenOddCheckLoop
+        // Console.WriteLine("Enter a number to Check Even or Odd and Press q or Q to exit");
+        // Calc calc = new Calc();
+        // string? input = Console.ReadLine();
+        // bool flag = false;
+        // int num;
+        // string checkResult = string.Empty;
+
+        // while(num!="q" || num != "Q")
+        // {
+        //     num=(int.TryParse(input, out int number));
+        //     flag = calc.IsEven(num)? "Even": "odd";
+        //     Console.WriteLine(flag);
+        //     Console.WriteLine("Enter a number to Check Even or Odd and Press q or Q to exit");
+        //     string? input = Console.ReadLine();
+        // }
+        #endregion
+
+        // Practice practice = new Practice();
+        Calc myCalc = new Calc();
+        myCalc.CheckHeight();
+        myCalc.LargestOfThree();
+
     }
 }
