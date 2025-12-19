@@ -2,6 +2,7 @@ using System;
 
 // namespace Program;
 namespace dotnet;
+
 class Calc{
     #region EvenAndOdd
     public bool IsEven(int n)
@@ -38,6 +39,7 @@ class Calc{
     #endregion
 
     #region Largest of Three: Take three integers and find the maximum using nested if
+
     public void LargestOfThree()
     {
         
@@ -76,7 +78,24 @@ class Calc{
     #region Leap Year Checker
     public void CheckLeapYear()
     {
-        
+        Console.WriteLine("Enter year to check if leap year or not?");
+        string? inp=Console.ReadLine();
+
+        if(int.TryParse(inp, out int year))
+        {
+            if(year%400==0 || (year%4==0 && year % 100 != 0))
+            {
+                Console.WriteLine(year + " is a leap year.");
+            }
+            else
+            {
+                Console.WriteLine(year + " is not a leap year.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error")
+        }
     }
 
     #endregion
