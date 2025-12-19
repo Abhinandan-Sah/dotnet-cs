@@ -175,7 +175,33 @@ class Calc{
     #endregion
 
     #region Electricity Bill
-    
+    public void CheckElectricityBill(){
+        int units;
+        Console.WriteLine("Enter total Units: ");
+        while (!int.TryParse(Console.ReadLine(), out units){
+            Console.WriteLine("Invalid. Enter total Units: ");
+        }
+        double result;
+        if (units <= 199)
+        {
+            result= units*1.20;
+        }
+        else if(200<=units && units<400)
+        {
+            result = units*1.50;
+        }
+        else if(400<=units && units < 600)
+        {
+            result = units*1.80;
+        }
+        else
+        {
+            result= units*2.00;
+            result = 0.15*result;
+        }
+
+        
+    }
     #endregion
 
     #region Vowel or Consonant
