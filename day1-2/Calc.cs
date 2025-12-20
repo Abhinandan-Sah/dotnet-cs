@@ -178,7 +178,7 @@ class Calc{
     public void CheckElectricityBill(){
         int units;
         Console.WriteLine("Enter total Units: ");
-        while (!int.TryParse(Console.ReadLine(), out units){
+        while (!int.TryParse(Console.ReadLine(), out units)){
             Console.WriteLine("Invalid. Enter total Units: ");
         }
         double result;
