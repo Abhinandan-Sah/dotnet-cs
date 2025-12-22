@@ -205,11 +205,66 @@ class Calc{
     #endregion
 
     #region Vowel or Consonant
-    
+    public void checkVowelOrConsonant()
+    {
+        Console.WriteLine("Enter a character: ");
+        string? inp= Console.ReadLine();
+
+        if(char.TryParse(inp, out char ch))
+        {
+            switch (char.ToLower(ch))
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    Console.WriteLine("Vowel");
+                    break;
+                default:
+                    Console.WriteLine("Consonant");
+                    break;
+            }
+        }
+    }
     #endregion
 
     #region Triangle Type
-    
+    public void TriangleType()
+    {
+        int a, b, c;
+        Console.WriteLine("Enter one side a: ");
+        while(!int.TryParse(Console.ReadLine(), out a))
+        {
+            Console.WriteLine("Invalid input. Please enter a whole number.");
+        }
+        
+        Console.WriteLine("Enter second side b: ");
+        while(!int.TryParse(Console.ReadLine(), out b))
+        {
+            Console.WriteLine("Invalid input. Please enter a whole number.");
+        }
+
+        Console.WriteLine("Enter third side c: ");
+        while(!int.TryParse(Console.ReadLine(), out c))
+        {
+            Console.WriteLine("Invalid input. Please enter a whole number.");
+        }
+
+        if(a==b && b==c )
+        {
+            Console.WriteLine("Equilateral Triangle");
+        }
+        else if(a==b || b==c || a==c)
+        {
+            Console.WriteLine("Isoceles Triangle");
+        }
+        else
+        {
+            Console.WriteLine("Scalene Triangle");
+        }
+
+    }
     #endregion
 
     #region Quadrant Finder

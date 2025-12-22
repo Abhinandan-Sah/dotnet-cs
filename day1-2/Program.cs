@@ -98,8 +98,9 @@ class Program
 
         // Practice practice = new Practice();
         Calc myCalc = new Calc();
-        myCalc.CheckHeight();
-        myCalc.LargestOfThree();
+        // myCalc.CheckHeight();
+        // myCalc.LargestOfThree();
+        myCalc.checkVowelOrConsonant();
 
     }
 }
