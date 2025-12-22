@@ -83,7 +83,11 @@ public class Program
             Women w = (Women) p;
             result = $"id = {p.Id}, name = {p.Name}, Age = {p.Age}, Playing= {w.PlayManage}";
         }
-        result = $"id = {p.Id}, name = {p.Name}, Age = {p.Age}";
+        else
+        {
+            result = $"id = {p.Id}, name = {p.Name}, Age = {p.Age}";
+        }
+        
         return result;
     }
 
