@@ -3,6 +3,8 @@ using day4.ConstructorEx;
 using day4.ConsAdd;
 using day4.fieldInOop;
 using day4.Encapulation;
+using day4.OverwriteInCS;
+using day4.ExampleOnOverwriteAndVirtual;
 
 namespace day4
 {
@@ -37,13 +39,29 @@ namespace day4
                 #endregion
 
                 #region Account.cs
-                var account = new Account(){AccountId=22, name="Avi"};
-                var result = account.getAccountDetails();
-                Console.WriteLine(result);
+                // var account = new Account(){AccountId=22, name="Avi"};
+                // var result = account.getAccountDetails();
+                // Console.WriteLine(result);
 
-                var saleInfo = new SaleInfo(){AccountId=4, name="Ravi", saleInfo= ""};
-                string result1 = saleInfo.getSaleInfoDetails();
-                Console.WriteLine(result1);
+                // var saleInfo = new SaleInfo(){AccountId=4, name="Ravi", saleInfo= ""};
+                // string result1 = saleInfo.getSaleInfoDetails();
+                // Console.WriteLine(result1);
+                #endregion
+                
+                #region Account.cs
+                // var father = new Father();
+                // string? result = father.InterestOn();
+                // Console.WriteLine(result);
+                // var son = new Son();
+                // string? result1 = son.InterestOn();
+                // Console.WriteLine(result1);
+
+                Holiday holiday = new Holiday();
+                holiday.getHoliday();
+                India india = new India();
+                india.getHoliday();
+                US us = new US();
+                us.getHoliday();
                 #endregion
                 
             }
