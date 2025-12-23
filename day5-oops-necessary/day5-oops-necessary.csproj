@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>day5_oops_necessary</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MathLib\**" />
+    <Compile Remove="ScienceLib\**" />
+    <Compile Remove="CalcApp\**" />
+    <Compile Remove="CommonLib\**" />
+    <EmbeddedResource Remove="MathLib\**" />
+    <EmbeddedResource Remove="ScienceLib\**" />
+    <EmbeddedResource Remove="CalcApp\**" />
+    <EmbeddedResource Remove="CommonLib\**" />
+    <None Remove="MathLib\**" />
+    <None Remove="ScienceLib\**" />
+    <None Remove="CalcApp\**" />
+    <None Remove="CommonLib\**" />
+  </ItemGroup>
+
+</Project>
