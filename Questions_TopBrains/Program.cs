@@ -5,7 +5,8 @@
         public static void Main()
         {
             // LuckyDraw.LuckyDrawAnswer();
-            MultiplicationTable.MultiplicationTableAnswer();
+            // MultiplicationTable.MultiplicationTableAnswer();
+            Swapping.SwappingMethod();
         }
     }
 
