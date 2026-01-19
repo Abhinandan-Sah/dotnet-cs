@@ -4,7 +4,8 @@
     {
         public static void Main()
         {
-            LuckyDraw.LuckyDrawAnswer();
+            // LuckyDraw.LuckyDrawAnswer();
+            MultiplicationTable.MultiplicationTableAnswer();
         }
     }
 
