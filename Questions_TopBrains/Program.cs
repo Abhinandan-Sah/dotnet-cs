@@ -6,7 +6,8 @@
         {
             // LuckyDraw.LuckyDrawAnswer();
             // MultiplicationTable.MultiplicationTableAnswer();
-            Swapping.SwappingMethod();
+            // Swapping.SwappingMethod();
+            StringFormat.StringFormatAnswer();
         }
     }
 
