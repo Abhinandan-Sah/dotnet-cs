@@ -7,7 +7,8 @@
             // LuckyDraw.LuckyDrawAnswer();
             // MultiplicationTable.MultiplicationTableAnswer();
             // Swapping.SwappingMethod();
-            StringFormat.StringFormatAnswer();
+            // StringFormat.StringFormatAnswer();
+            ArithmeticExpressions.ArithmeticExpressionsAnswer();
         }
     }
 
