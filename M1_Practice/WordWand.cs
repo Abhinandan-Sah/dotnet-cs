@@ -56,7 +56,7 @@ namespace M1_Practice
     {
         public static bool CheckInvalidCharacter(string s)
         {
-            if (string.IsNullOrEmpty)
+            if (string.IsNullOrEmpty(s))
             {
                 return true;
             }
