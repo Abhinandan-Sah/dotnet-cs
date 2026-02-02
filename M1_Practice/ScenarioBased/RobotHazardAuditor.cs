@@ -38,7 +38,7 @@ namespace M1_Practice
             }
 
             // check machinery state is one of the allowed values
-            if(machineryState !="Worn" && machineryState != "Faculty" && machineryState != "Critical")
+            if(machineryState !="Worn" && machineryState != "Faulty" && machineryState != "Critical")
             {
                 throw new RobotSafetyException("Error: Unsupported machinery state");
             }
@@ -47,13 +47,13 @@ namespace M1_Practice
             double machineRiskFactor = machineryState switch
             {
                 "Worn"=>1.3,
-                "Faculty"=> 2.0,
+                "Faulty"=> 2.0,
                 "Critical"=>3.0
             };
 
             // calculate final hazard risk score
-            double HazardRisk = ((1.0 - armPrecision) * 15.0) + (workerDensity * machineRiskFactor);
-            return HazardRisk;
+            double hazardRisk = ((1.0 - armPrecision) * 15.0) + (workerDensity * machineRiskFactor);
+            return hazardRisk;
         }
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace M1_Practice
             // calculate risk and handle any errors
             try
             {
-                double HazardRisk = robotHazardAuditor.CalculateHazardRisk(armPrecision, workerDensity, machineryState);
-                Console.WriteLine("Robot Hazard Risk Score: "+HazardRisk);
+                double hazardRisk = robotHazardAuditor.CalculateHazardRisk(armPrecision, workerDensity, machineryState);
+                Console.WriteLine("Robot Hazard Risk Score: "+hazardRisk);
             }catch(RobotSafetyException ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Message);
             }
         }
     }
