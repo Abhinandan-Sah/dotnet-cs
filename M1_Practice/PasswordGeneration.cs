@@ -10,12 +10,12 @@ namespace Programming.M1Practice
         // Program entry: read username, validate, and print password.
         public static void Main(string[] args)
         {
-            string UserName = Console.ReadLine();
+            string? UserName = Console.ReadLine();
             try
             {
-                validateInput(UserName);
+                validateInput(UserName!);
                 System.Console.WriteLine("User Valid");
-                System.Console.WriteLine(GeneratePassword(UserName));
+                System.Console.WriteLine(GeneratePassword(UserName!));
             }
             catch (Exception ex)
             {

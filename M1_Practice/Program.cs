@@ -45,21 +45,21 @@
                 Console.WriteLine();
                 Console.WriteLine("Enter your choice");
 
-                int choice = int.Parse(Console.ReadLine());
+                int choice = int.Parse(Console.ReadLine() ?? "0");
 
                 switch (choice)
                 {
                     case 1:
                         Console.WriteLine("Enter the model");
-                        string model = Console.ReadLine();
+                        string? model = Console.ReadLine();
 
                         Console.WriteLine("Enter the brand");
-                        string brand = Console.ReadLine();
+                        string? brand = Console.ReadLine();
 
                         Console.WriteLine("Enter the price per day");
-                        int price = int.Parse(Console.ReadLine());
+                        int price = int.Parse(Console.ReadLine() ?? "0");
 
-                        utility.AddBikeDetails(model, brand, price);
+                        utility.AddBikeDetails(model ?? "", brand ?? "", price);
                         Console.WriteLine("Bike details added successfully");
                         Console.WriteLine();
                         break;

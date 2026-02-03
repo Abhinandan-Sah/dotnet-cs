@@ -63,11 +63,11 @@ namespace Programming.M1Practice
         {
             int T;
             System.Console.WriteLine("Enter number of entries");
-            T = int.Parse(Console.ReadLine());
+            T = int.Parse(Console.ReadLine() ?? "0");
             while (T != 0)
             {
-                string input = Console.ReadLine();
-                string[] employee = input.Split(":");
+                string? input = Console.ReadLine();
+                string[] employee = (input ?? "").Split(":");
                 string employeeId = employee[0];
                 string employeeType = employee[1];
                 int duration = int.Parse(employee[2]);

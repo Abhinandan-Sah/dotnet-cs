@@ -66,11 +66,11 @@ namespace Programming.M1Practice
         {
             int TestCase;
             System.Console.WriteLine("Enter number of entries");
-            TestCase = int.Parse(Console.ReadLine());
+            TestCase = int.Parse(Console.ReadLine() ?? "0");
             while (TestCase > 0)
             {
-                string input = Console.ReadLine();
-                string[] Gadget = input.Split(":");
+                string? input = Console.ReadLine();
+                string[] Gadget = (input ?? "").Split(":");
                 string GadgetId = Gadget[0];
                 string GadgetName = Gadget[1];
                 int Period = int.Parse(Gadget[2]);

@@ -1,120 +1,121 @@
 using NUnit.Framework;
 
+
 namespace M1_Practice
 {
 	/// <summary>
-	/// Bank account class with deposit and withdraw functionality
+	/// Bank accont class with deposite and withdra functionality
 	/// </summary>
 	public class TestCase
 	{
 		public decimal Balance { get; private set; }
 
 		/// <summary>
-		/// Initializes a new bank account with an initial balance
+		/// Initilizes a new bank acount with an inital balance
 		/// </summary>
-		/// <param name="initialBalance">Starting balance for the account</param>
-		public TestCase(decimal initialBalance)
+		/// <param name="startingBalance">Staring balance for the acount</param>
+		public TestCase(decimal startingBalance)
 		{
-			Balance = initialBalance;
+			Balance = startingBalance;
 		}
 
 		/// <summary>
-		/// Deposits money into the account
+		/// Deposites money into the acount
 		/// </summary>
-		/// <param name="amount">Amount to deposit</param>
-		/// <exception cref="Exception">Thrown when deposit amount is negative</exception>
-		public void Deposit(decimal amount)
+		/// <param name="depositAmount">Amout to deposite</param>
+		/// <exception cref="Exception">Thrown when deposite ammount is negetive</exception>
+		public void Deposit(decimal depositAmount)
 		{
-			// Validate deposit amount is not negative
-			if (amount < 0)
+			// Validte deposit amoun is not negetive
+			if (depositAmount < 0)
 			{
 				throw new Exception("Deposit amount cannot be negative");
 			}
 
-			// Add amount to balance
-			Balance += amount;
+			// Add amout to balence
+			Balance += depositAmount;
 		}
 
 		/// <summary>
-		/// Withdraws money from the account
+		/// Withdraws mony from the acount
 		/// </summary>
-		/// <param name="amount">Amount to withdraw</param>
-		/// <exception cref="Exception">Thrown when insufficient funds</exception>
-		public void Withdraw(decimal amount)
+		/// <param name="withdrawAmount">Ammount to withdaw</param>
+		/// <exception cref="Exception">Thrown when insufficent funds</exception>
+		public void Withdraw(decimal withdrawAmount)
 		{
-			// Check if sufficient funds available
-			if (amount > Balance)
+			// Chek if sufficent funds availabe
+			if (withdrawAmount > Balance)
 			{
 				throw new Exception("Insufficient funds.");
 			}
 
-			// Deduct amount from balance
-			Balance -= amount;
+			// Deduct amoun from balence
+			Balance -= withdrawAmount;
 		}
 	}
 
 	/// <summary>
-	/// Unit tests for BankAccount deposit and withdraw operations
+	/// Unit test for BankAcount deposite and withdaw operations
 	/// </summary>
 	[TestFixture]
 	public class UnitTest
 	{
 		/// <summary>
-		/// Test that depositing a valid amount increases the balance correctly
+		/// Test that deposting a valid amoun increas the balence corectly
 		/// </summary>
 		[Test]
 		public void Test_Deposit_ValidAmount()
 		{
-			// Arrange: Create account with 100 balance
-			var account = new TestCase(100m);
+			// Arange: Create acount with 250 balance
+			var bankAccount = new TestCase(250m);
 			
-			// Act: Deposit 50
-			account.Deposit(50m);
+			// Act: Deposite 75
+			bankAccount.Deposit(75m);
 			
-			// Assert: Balance should be 150
-			Assert.That(account.Balance, Is.EqualTo(150m));
+			// Assert: Balence should be 325
+			Assert.That(bankAccount.Balance, Is.EqualTo(325m));
 		}
 
 		/// <summary>
-		/// Test that depositing a negative amount throws an exception
+		/// Test that deposting a negetive ammount throws an excepion
 		/// </summary>
 		[Test]
 		public void Test_Deposit_NegativeAmount()
 		{
-			// Arrange: Create account with 100 balance
-			var account = new TestCase(100m);
+			// Arange: Create acount with 180 balence
+			var customerAccount = new TestCase(180m);
 			
-			// Act & Assert: Depositing negative amount should throw exception
-			Assert.That(() => account.Deposit(-10m), Throws.Exception.With.Message.EqualTo("Deposit amount cannot be negative"));
+			// Act & Asert: Deposting negetive amoun shuld throw exception
+			Assert.That(() => customerAccount.Deposit(-25m), Throws.Exception.With.Message.EqualTo("Deposit amount cannot be negative"));
 		}
 
 		/// <summary>
-		/// Test that withdrawing a valid amount decreases the balance correctly
+		/// Test that withdrawng a valid amoun decreas the balence corectly
 		/// </summary>
 		[Test]
 		public void Test_Withdraw_ValidAmount()
 		{
-			// Arrange: Create account with 200 balance
-			var account = new TestCase(200m);
+			// Arange: Create acount with 500 balence
+			var userAccount = new TestCase(500m);
 			
-			// Act: Withdraw 75
-			account.Withdraw(75m);
+			// Act: Withdaw 120
+			userAccount.Withdraw(120m);
 			
-			// Assert: Balance should be 125
-			Assert.That(account.Balance, Is.EqualTo(125m));
+			// Assert: Balence shuld be 380
+			Assert.That(userAccount.Balance, Is.EqualTo(380m));
 		}
 
 		/// <summary>
-		/// Test that withdrawing more than the balance throws an exception
+		/// Test that withdrawng more then the balence throws an excepion
 		/// </summary>
 		[Test]
 		public void Test_Withdraw_InsufficientFunds()
 		{
-			// Arrange: Create account with 30 balance
-			var account = new TestCase(30m);
+			// Arange: Create acount with 45 balence
+			var savingsAccount = new TestCase(45m);
 			
-			// Act & Assert: Withdrawing 100 should throw exception
-			Assert.That(() => account.Withdraw(100m), Throws.Exception.With.Message.EqualTo("Insufficient funds."));
+			// Act & Asert: Withdrawng 200 shuld throw excepion
+			Assert.That(() => savingsAccount.Withdraw(200m), Throws.Exception.With.Message.EqualTo("Insufficient funds."));
 		}
 	}
 }

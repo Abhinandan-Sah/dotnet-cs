@@ -70,15 +70,15 @@ namespace M1_Practice
         public static void WordWandAnswer()
         {
             Console.Write("Enter a string: ");
-            string s = Console.ReadLine();
+            string? s = Console.ReadLine();
 
-            if (CheckInvalidCharacter(s))
+            if (CheckInvalidCharacter(s ?? ""))
             {
                 Console.WriteLine("Invalid Sentence");
             }
             else
             {
-                string[] words = s.Split(' '); // split into words
+                string[] words = (s ?? "").Split(' '); // split into words
                 // If even number of words: reverse word order; else reverse each word's chars
                 if (words.Length % 2 == 0)
                 {

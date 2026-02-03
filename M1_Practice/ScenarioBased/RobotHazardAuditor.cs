@@ -48,7 +48,8 @@ namespace M1_Practice
             {
                 "Worn"=>1.3,
                 "Faulty"=> 2.0,
-                "Critical"=>3.0
+                "Critical"=>3.0,
+                _ => 1.0
             };
 
             // calculate final hazard risk score
@@ -83,7 +84,7 @@ namespace M1_Practice
             
             // get machinery state
             Console.WriteLine("Enter Machinery State (Worn/Faulty/Critical): ");
-            machineryState = Console.ReadLine();
+            machineryState = Console.ReadLine() ?? "";
 
             // calculate risk and handle any errors
             try
