@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <StartupObject>M1_Practice.Controller</StartupObject>
+    <StartupObject>M1_Practice.OrderProcessor</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
