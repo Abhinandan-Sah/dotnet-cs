@@ -2,14 +2,17 @@ namespace M1_Practice
 {
     public class LibraryUtility
     {
-        public int Id { get; set; }
+        public static int id=1;
 
         public static List<Book> books = new List<Book>();
         public void AddBook(string title, string author, string genre, int year)
         {
             // Adds book with auto-incremented ID
+            int currentId = id;
+            id++;
 
             books.Add(new Book{
+                Id=currentId,
                 Title = title,
                 Author = author,
                 Genre = genre,
@@ -53,7 +56,7 @@ namespace M1_Practice
             // Returns all books by specific author
             foreach (var book in books)
             {
-                if (book.Author==author)
+                if ((book.Author).ToLower()==author.ToLower())
                 {
                     ans.Add(book);
                 }
@@ -65,12 +68,7 @@ namespace M1_Practice
         public int GetTotalBooksCount()
         {
             // Returns total number of books
-            int cnt =0;
-            foreach(var book in books)
-            {
-                cnt++;
-            }
-            return cnt;
+            return books.Count;
         }
 
         public static void Main()
