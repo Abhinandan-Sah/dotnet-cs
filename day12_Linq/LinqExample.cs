@@ -75,13 +75,11 @@ namespace day12_Linq
             }
         }
 
-
-
         private class MyProcess{
             public string Name {get; set;}
             public int Id {get; set;}
         }
-
+            select dept, count(emplo), average(salary) from employee groupby dept;
         
 
     }
