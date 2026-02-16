@@ -1,0 +1,24 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        List<int> a = new List<int>{1, 4, 7};
+        List<int> b = new List<int>{2, 3, 8};
+        List<int> c = new List<int>();
+        foreach(var i in a){
+            c.Add(i);
+        }
+        foreach(var i in b){
+            c.Add(i);
+        }
+        
+        c.Sort();
+        Console.WriteLine(string.Join(' ', c));
+    }
+}

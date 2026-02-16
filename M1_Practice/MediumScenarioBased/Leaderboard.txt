@@ -1,0 +1,86 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the value of n: ");
+        int n=int.Parse(Console.ReadLine());
+        List<(string name, int score)> arr = new List<(string name, int score)>();
+        string nam = string.Empty;
+        int sc;
+        for(int i=0; i<n; i++){
+             nam = Console.ReadLine();
+             sc = int.Parse(Console.ReadLine());
+             arr.Add((nam, sc));
+        }
+        
+        int k = int.Parse(Console.ReadLine());
+        
+        var res = arr.OrderByDescending((item)=> item.score).Take(3);
+                    
+        foreach(var item in res){
+            Console.WriteLine($"{item.name} {item.score}");
+        }
+        
+        
+        
+    }
+}
+
+tesing
+4
+Raj
+80
+Annu
+95
+Vikram
+90
+Meena
+85
+3
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the value of n: ");
+        int n=int.Parse(Console.ReadLine());
+        List<(string name, int score)> arr = new List<(string name, int score)>();
+        string nam = string.Empty;
+        int sc;
+        for(int i=0; i<n; i++){
+             nam = Console.ReadLine();
+             sc = int.Parse(Console.ReadLine());
+             arr.Add((nam, sc));
+        }
+        
+        int k = int.Parse(Console.ReadLine());
+        if(k<=0){
+            Console.WriteLine("Invalid input");
+        }
+        
+        var res = arr.OrderByDescending((item)=> item.score).ThenBy((item)=> item.name).Take(3);
+                    
+        foreach(var item in res){
+            Console.WriteLine($"{item.name} {item.score}");
+        }
+        
+        
+        
+    }
+}

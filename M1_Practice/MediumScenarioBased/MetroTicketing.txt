@@ -1,0 +1,49 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter the value of n: ");
+        int n=int.Parse(Console.ReadLine());
+        Queue<(TimeSpan entryTime, string ticketType)> q  = new Queue<(TimeSpan entryTime, string ticketType)>();
+        
+        string tt = string.Empty;
+        for(int i=0; i<n; i++){
+             TimeSpan et = TimeSpan.Parse(Console.ReadLine());
+             tt = Console.ReadLine();
+             q.Enqueue((et, tt));
+        }
+        TimeSpan start = TimeSpan.Parse("8:00");
+        TimeSpan end = TimeSpan.Parse("10:00");
+        
+        int cnt =0;
+        while(q.Count>0){
+            var item = q.Dequeue();
+            if((item.entryTime>=start && item.entryTime<=end) && item.ticketType=="Regular"){
+                cnt++;
+            }
+        }
+        
+        Console.WriteLine(cnt);
+        
+        
+    }
+}
+
+input: 
+3
+10:00
+Regular
+10:01
+Regular
+09:59
+Regular
+
+output : 2
